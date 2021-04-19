@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Brands extends Model
 {
-    protected $table='producto';
+    protected $table='marca';
     public $timestamps=false;
     protected $fillable=[
-        'id_producto', 'codigo_producto', 'nombre', 'descripcion', 'id_marca'
+        'id_marca', 'descripcion'
     ];
 
-    protected $primaryKey='id_producto';
+    protected $primaryKey='id_marca';
 }

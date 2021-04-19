@@ -64,6 +64,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-6 offset-3">
+                        <div class="form-group">
+                            <label>Marca</label>
+                            <select name="marca" class="form-control" >
+                                <option value="">--Seleccione--</option>
+                            @foreach( $marcas as $marca)
+                                <option value="{{$marca->id_marca}}" >{{$marca->descripcion}}  </option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-6 offset-3">
                         <button type="submit" class="btn btn-primary">Guardar</button>
