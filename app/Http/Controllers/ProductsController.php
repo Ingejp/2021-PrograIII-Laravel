@@ -9,10 +9,20 @@ use App\Models\Brands;
 
 class ProductsController extends Controller
 {
-    public function registerProducts(){
-        $marcas=Brands::all();
-        return view('registrarProducto', compact('marcas'));
+    public function nombreDelMetodo(){
+        //Metodo de ejemplo
     }
+
+    public function registerProducts(){
+        //Consultamos las marcas de productos que estan en la Base de datos
+        $marcas = Brands::all();
+
+        $variableDeEjemplo='Hola Alumnos de PrograIII';
+
+        //Se retorna la ruta y se envian los objetos o variables hacia la vista
+        return view('registrarProducto', compact('marcas', 'variableDeEjemplo'));
+    }
+
 
     public function saveProduct(Request $request){
 
@@ -26,16 +36,18 @@ class ProductsController extends Controller
             'codigo.required'=>'El campo codigo no debe estar vacio.',
             'nombre.required'=>'El campo nombre no debe estar vacio.',
             'descripcion.required'=>'El campo descripcion no debe estar vacio.',
-            'id_marca.required'=>'El campo descripcion no debe estar vacio.',
+            'id_marca.required'=>'El campo marca no debe estar vacio.',
+
             'codigo.max'=>'El codigo no puede tener más 13 caracteres.',
             'nombre.max'=>'El nombre no puede tener más 75 caracteres.',
             'descripcion.max'=>'La descripcion no puede tener más 75 caracteres.',
-        ]);
+        ]); // termina el bloque de validaciones
 
 
 
         try{
             //Guardar el producto
+
            $products= Products::create([
                'codigo_producto'=> $data['codigo'],
                'nombre'=>$data['nombre'],
