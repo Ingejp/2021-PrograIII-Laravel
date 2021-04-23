@@ -31,6 +31,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('products.index')}}">Registrar Productos</a>
+                        <a class="dropdown-item" href="{{route('products.listarProductos')}}">Lista de Productos</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>

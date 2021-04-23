@@ -23,6 +23,10 @@ class ProductsController extends Controller
         return view('registrarProducto', compact('marcas', 'variableDeEjemplo'));
     }
 
+    public function showProducts(){
+        $products = Products::all();
+        return view('listaDeProductos', compact('products'));
+    }
 
     public function saveProduct(Request $request){
 
