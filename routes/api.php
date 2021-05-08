@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('get-products', [\App\Http\Controllers\ProductsController::class, 'getAll'])->name('api-getAll');
 Route::put('save-products', [\App\Http\Controllers\ProductsController::class, 'saveProduct'])->name('api-saveProduct');
+Route::delete('delete-products/{id}', [\App\Http\Controllers\ProductsController::class, 'deleteProduct'])->name('api-deleteProduct');

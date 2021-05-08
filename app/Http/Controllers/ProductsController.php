@@ -15,6 +15,17 @@ class ProductsController extends Controller
         return $products;
     }
 
+    public function deleteProduct($id){
+        $product= $this->getProduct($id);
+        $product->delete();
+        return $product;
+    }
+
+    public function getProduct($id){
+        $product=Products::find($id);
+        return $product;
+    }
+
     public function registerProducts(){
         //Consultamos las marcas de productos que estan en la Base de datos
         $marcas = Brands::all();
