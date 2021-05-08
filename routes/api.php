@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('get-products', [\App\Http\Controllers\ProductsController::class, 'getAll'])->name('api-getAll');
+Route::put('save-products', [\App\Http\Controllers\ProductsController::class, 'saveProduct'])->name('api-saveProduct');

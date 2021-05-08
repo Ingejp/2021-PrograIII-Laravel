@@ -65,6 +65,7 @@
                         <div class="form-group">
                             <label>descripción</label>
                             <input type="text"  name="descripcion" class="form-control" >
+                            <input type="hidden" name="control" value="form">
                         </div>
                     </div>
                 </div>
