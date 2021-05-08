@@ -26,6 +26,12 @@ class ProductsController extends Controller
         return $product;
     }
 
+    public function editProduct($id, Request $request){
+        $product = $this->getProduct($id);
+        $product->fill($request->all())->save();
+        return $product;
+    }
+
     public function registerProducts(){
         //Consultamos las marcas de productos que estan en la Base de datos
         $marcas = Brands::all();
