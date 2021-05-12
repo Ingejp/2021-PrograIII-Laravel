@@ -1,0 +1,8 @@
+La tabla categoría no está relacionada, puede proceder a relacionarla abriendo el archivo con MysqlWorkBench
+y nodificando el digramaga ER.
+
+Tambien puede continuar trabajando unicamente con la tabla producto y marca.
+
+Solo para ver la imagen del diagrama abra el archivo imagen de ER.png
+
+Para obtener la base de datos y la data vista en el curso, el recurso se encuentra en el archivo slq_bd_Api_rest_laravel.sql.
