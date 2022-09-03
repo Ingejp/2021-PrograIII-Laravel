@@ -14,4 +14,8 @@ class Products extends Model
     ];
 
     protected $primaryKey='id_producto';
+
+    public function marca(){
+        return $this->belongsTo(Brands::class);
+    }
 }

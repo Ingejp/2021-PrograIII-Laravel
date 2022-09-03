@@ -8,7 +8,7 @@
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary rounded-right" onclick="searchComercio()" id="btn-comercio" ><i class="fas fa-search"></i></button>
             </div>
-            <button type="button" class="btn btn-success ml-5" onclick="goToEvents()"><i class="fas fa-plus text-white"></i> Nuevo</button>
+            <a href="{{route('products.index')}}" class="btn btn-success ml-5" ><i class="fas fa-plus text-white"></i> Nuevo</a>
         </div>
         <div class="table-responsive">
             <table class="table table-hover">
@@ -26,12 +26,12 @@
                 <tbody>
                 @foreach($products as $producto)
                     <tr>
-                        <td>{{$producto->alias}}</td>
+                        <td>{{ $producto->id_producto}}</td>
+                        <td>{{$producto->codigo_producto}}</td>
                         <td>{{$producto->nombre}}</td>
-                        <td>{{$producto->direccion}}</td>
-                        <td>{{$producto->telefono_principal}}</td>
-                        <td>{{$producto->telefono_secundario}}</td>
-                        <td class="d-flex d-inline"><a href="/comercio=editar={{$producto->id_comercio}}"><i class="far fa-edit fa-lg"></i></a><a onclick="deleteComercio({{$comercio->id_comercio}})" class="mx-3" href="#" ><i class="fas fa-trash-alt fa-lg text-danger" ></i></a></td>
+                        <td>{{$producto->descripcion}}</td>
+                        <td>{{ \App\Http\Controllers\ProductsController::getMarca($producto->id_marca) }}</td>
+                        <td class="d-flex d-inline"><a href=""><i class="far fa-edit fa-lg"></i></a><a onclick="" class="mx-3" href="#" ><i class="fas fa-trash-alt fa-lg text-danger" ></i></a></td>
                     </tr>
                 @endforeach
                 </tbody>

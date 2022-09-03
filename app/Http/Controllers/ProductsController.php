@@ -43,8 +43,12 @@ class ProductsController extends Controller
     }
 
     public function showProducts(){
-        $products = Products::all();
+        $products = Products::paginate(10);
         return view('listaDeProductos', compact('products'));
+    }
+    public static function getMarca($idMarca){
+        $marca= Brands::find($idMarca);
+        return $marca->descripcion;
     }
 
     public function saveProduct(Request $request){

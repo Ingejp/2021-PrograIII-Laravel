@@ -14,4 +14,8 @@ class Brands extends Model
     ];
 
     protected $primaryKey='id_marca';
+
+    public function producto(){
+        return $this->hasOne(Products::class);
+    }
 }
